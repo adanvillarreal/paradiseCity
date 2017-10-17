@@ -1,3 +1,5 @@
+package Entidades;
+
 import com.sun.istack.internal.Nullable;
 import javafx.util.Pair;
 
@@ -9,13 +11,13 @@ public class Residente {
     private int numCuarto;
     private int numCama;
     @Nullable
-    private Date fechaDefuncion;
+    private Date fechaDefuncion = null;
     private String servicioEmergencia;
     private String numSeguro;
     private Map<String, String> contactos = new HashMap<>();
     private List<String> condiciones = new ArrayList<>();
     //TODO(@adanvillarreal, @javier96): Los siguientes atributos son de clases pendientes
-    private List<ProductoGen> productos;
+    private List<ProductoGenerico> productos;
     private List<Eventualidad> eventualidades;
     //TODO(@adanvillarreal): Investigar si es la manera adecuada de representar salidas
 
@@ -29,9 +31,21 @@ public class Residente {
         this.numSeguro = numSeguro;
     }
 
-    public void addContacto(String contacto, String telefono) { this.contactos.put(contacto, telefono); }
+    public void addContacto(String contacto, String telefono) {
+        this.contactos.put(contacto, telefono);
+    }
 
-    public List<String> addCondicion(String condicion) { this.condiciones.add(condicion); }
+    public void addCondicion(String condicion) {
+        this.condiciones.add(condicion);
+    }
+
+    public void addProducto(ProductoGenerico productoGenerico) {
+        this.productos.add(productoGenerico);
+    }
+
+    public void addEventualidad(Eventualidad eventualidad) {
+        this.eventualidades.add(eventualidad);
+    }
 
     public String getNombre() {
         return nombre;
@@ -88,3 +102,4 @@ public class Residente {
     public void setNumSeguro(String numSeguro) {
         this.numSeguro = numSeguro;
     }
+}
