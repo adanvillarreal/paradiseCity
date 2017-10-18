@@ -10,6 +10,7 @@ public class Residente {
     private Date fechaDeNacimiento;
     private int numCuarto;
     private int numCama;
+    private boolean isHospital = false;
     @Nullable
     private Date fechaDefuncion = null;
     private String servicioEmergencia;
@@ -21,7 +22,7 @@ public class Residente {
     private List<Eventualidad> eventualidades;
     //TODO(@adanvillarreal): Investigar si es la manera adecuada de representar salidas
 
-    public Residente(String nombre, Date fechaDeNacimiento, int numCuarto, int numCama, Date fechaDefuncion, String servicioEmergencia, String numSeguro) {
+    public Residente(String nombre, Date fechaDeNacimiento, int numCuarto, int numCama, Date fechaDefuncion, String servicioEmergencia, String numSeguro, boolean isHospital) {
         this.nombre = nombre;
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.numCuarto = numCuarto;
@@ -29,6 +30,15 @@ public class Residente {
         this.fechaDefuncion = null;
         this.servicioEmergencia = servicioEmergencia;
         this.numSeguro = numSeguro;
+        this.isHospital = isHospital;
+    }
+
+    public boolean isHospital() {
+        return isHospital;
+    }
+
+    public void setHospital(boolean hospital) {
+        isHospital = hospital;
     }
 
     public void addContacto(String contacto, String telefono) {
