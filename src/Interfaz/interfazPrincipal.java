@@ -1,12 +1,9 @@
 package Interfaz;
 
 import javax.swing.*;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import java.awt.*;
 
-public class interfazPrincipal {
-
+public class interfazPrincipal extends JFrame{
     private JPanel pnPanel0;
     private JTabbedPane tbpTabbedPane0;
 
@@ -21,6 +18,12 @@ public class interfazPrincipal {
     private JButton btBtDiaAnterior;
     private JButton btBtDiaSiguiente;
     private JTable tbTable1;
+
+    public interfazPrincipal(){
+        this.initialize();
+        this.setSize(600,400);
+        this.setVisible(true);
+    }
 
     private void initialize() {
         pnPanel0 = new JPanel();
@@ -169,5 +172,6 @@ public class interfazPrincipal {
         gbcPanel0.anchor = GridBagConstraints.NORTH;
         gbPanel0.setConstraints(tbpTabbedPane0, gbcPanel0);
         pnPanel0.add(tbpTabbedPane0);
+        this.add(pnPanel0);
     }
 }
