@@ -1,15 +1,24 @@
 package Entidades;
 import com.sun.istack.internal.Nullable;
 import javafx.util.Pair;
+import com.thoughtworks.xstream.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.*;
-import org.mapdb.DB;
+
+
+import javax.imageio.ImageIO;
+
 /* para incluir la libreria: https://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project */
-public class Residente {
+public class Residente implements Serializable {
+    private BufferedImage image;
     private String nombre;
     private Date fechaDeNacimiento;
     private int numCuarto;
     private int numCama;
-    private boolean isHospital = false;
+    private int status = 1;
     @Nullable
     private Date fechaDefuncion = null;
     private String servicioEmergencia;
@@ -21,7 +30,12 @@ public class Residente {
     private List<Eventualidad> eventualidades;
     //TODO(@adanvillarreal): Investigar si es la manera adecuada de representar salidas
 
-    public Residente(String nombre, Date fechaDeNacimiento, int numCuarto, int numCama, Date fechaDefuncion, String servicioEmergencia, String numSeguro, boolean isHospital) {
+    public Residente(String nombre, Date fechaDeNacimiento, int numCuarto, int numCama, Date fechaDefuncion, String servicioEmergencia, String numSeguro, int status) throws IOException {
+        try {
+            this.image = ImageIO.read(new File(nombre + ".jpg"));
+        } catch(IOException e){
+            this.image = ImageIO.read(new File("generic.jpg"));
+        }
         this.nombre = nombre;
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.numCuarto = numCuarto;
@@ -29,15 +43,15 @@ public class Residente {
         this.fechaDefuncion = null;
         this.servicioEmergencia = servicioEmergencia;
         this.numSeguro = numSeguro;
-        this.isHospital = isHospital;
+        this.status = status;
     }
 
-    public boolean isHospital() {
-        return isHospital;
+    public int getStatus() {
+        return status;
     }
 
-    public void setHospital(boolean hospital) {
-        isHospital = hospital;
+    public void setStatus (int status) {
+        this.status = status;
     }
 
     public void addContacto(String contacto, String telefono) {

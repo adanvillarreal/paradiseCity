@@ -1,8 +1,12 @@
 package Entidades;
-
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import org.mapdb.DB;
+import com.thoughtworks.xstream.*;
+@XStreamAlias("message")
 public class Recordatorio {
-
+    @XStreamAlias("type")
     private int diasFaltantes;
+    @XStreamAlias("type")
     private boolean status;
 
     public Recordatorio(int diasFaltantes, boolean status) {

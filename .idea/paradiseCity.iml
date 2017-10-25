@@ -16,5 +16,17 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/xstream-1.4.10.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="org.mapdb:mapdb:3.0.5" level="project" />
+    <orderEntry type="library" name="org.mapdb:mapdb:3.0.4" level="project" />
+    <orderEntry type="library" name="com.thoughtworks.xstream:xstream:1.4.10" level="project" />
   </component>
 </module>
