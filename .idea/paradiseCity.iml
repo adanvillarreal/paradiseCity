@@ -29,5 +29,16 @@
     <orderEntry type="library" name="org.mapdb:mapdb:3.0.5" level="project" />
     <orderEntry type="library" name="org.mapdb:mapdb:3.0.4" level="project" />
     <orderEntry type="library" name="com.thoughtworks.xstream:xstream:1.4.10" level="project" />
+    <orderEntry type="module-library" scope="TEST">
+      <library name="JUnit5">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/.idea/lib/junit-jupiter-api-5.0.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/.idea/lib/opentest4j-1.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="org.mockito:mockito-all:1.10.19" level="project" />
   </component>
 </module>

@@ -11,7 +11,7 @@ public class Reporte {
     @XStreamAlias("type")
     private Date date;
     @XStreamAlias("type")
-    private List<Eventualidad> eventualidads = new ArrayList<>();
+    private List<Eventualidad> eventualidades = new ArrayList<>();
 
     public Date getDate() {
         return date;
@@ -22,20 +22,20 @@ public class Reporte {
     }
 
     public List<Eventualidad> getEventualidads() {
-        return eventualidads;
+        return eventualidades;
     }
 
     public void setEventualidads(List<Eventualidad> eventualidads) {
-        this.eventualidads = eventualidads;
+        this.eventualidades = eventualidads;
     }
 
     public Reporte(Date date, List<Eventualidad> eventualidads) {
         this.date = date;
-        this.eventualidads = eventualidads;
+        this.eventualidades = eventualidads;
     }
 
     public void addEventualidad(Eventualidad eventualidad){
-        this.eventualidads.add(eventualidad);
+        this.eventualidades.add(eventualidad);
 
     }
 }

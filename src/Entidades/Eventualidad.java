@@ -1,6 +1,7 @@
 package Entidades;
 
 import Utils.BDUtils;
+import Utils.EntidadSerializableUtils;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import java.util.ArrayList;
@@ -28,11 +29,18 @@ public class Eventualidad {
 
     private void insertToMap(){
         BDUtils db = new BDUtils("reportes.db");
-        Reporte reporte = (Reporte)db.getObject(this.fechaDeEventualidad.toString());
-        if(reporte == null)
+        Reporte reporte;
+        try {
+            String xml = (String) db.getObject(this.fechaDeEventualidad.toString());
+            System.out.println(xml);
+            reporte = (Reporte) EntidadSerializableUtils.getEntidadFromXml(xml);
+        } catch(NullPointerException e){
             reporte = new Reporte(this.fechaDeEventualidad, new ArrayList<Eventualidad>());
+        }
         reporte.addEventualidad(this);
-        db.replaceObject(this.fechaDeEventualidad.toString(), reporte);
+        if(db.getObject(this.fechaDeEventualidad.toString()) == null)
+            db.insertObject(this.fechaDeEventualidad.toString(), EntidadSerializableUtils.getXml(reporte));
+        db.replaceObject(this.fechaDeEventualidad.toString(), EntidadSerializableUtils.getXml(reporte));
         db.closeDB();
     }
 
