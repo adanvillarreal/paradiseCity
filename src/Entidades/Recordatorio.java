@@ -8,12 +8,14 @@ public class Recordatorio {
     private int diasFaltantes;
     @XStreamAlias("type")
     private boolean status;
+    @XStreamAlias("type")
+    public Eventualidad ev;
 
-    public Recordatorio(int diasFaltantes, boolean status) {
+    public Recordatorio(int diasFaltantes, boolean status, Eventualidad ev) {
         this.diasFaltantes = diasFaltantes;
         this.status = status;
+        this.ev = ev;
     }
-
     public int getDiasFaltantes() {
         return diasFaltantes;
     }

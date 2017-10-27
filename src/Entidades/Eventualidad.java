@@ -1,15 +1,21 @@
 package Entidades;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import java.util.Date;
 
+@XStreamAlias("message")
 public class Eventualidad {
-
+    @XStreamAlias("type")
     private String encargado;
+    @XStreamAlias("type")
     private String descripcion;
+    @XStreamAlias("type")
     private String residente;
+    @XStreamAlias("type")
     private Date fechaDeEventualidad;
 
-    public Eventualidad(String encargado, String descripcion, String residente) {
+    public Eventualidad(String encargado, String descripcion, String residente, Date fechaDeEventualidad) {
         this.encargado = encargado;
         this.descripcion = descripcion;
         this.residente = residente;
