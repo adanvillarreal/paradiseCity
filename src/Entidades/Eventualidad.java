@@ -1,8 +1,11 @@
 package Entidades;
 
+import Utils.BDUtils;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @XStreamAlias("message")
 public class Eventualidad {
@@ -20,6 +23,17 @@ public class Eventualidad {
         this.descripcion = descripcion;
         this.residente = residente;
         this.fechaDeEventualidad = fechaDeEventualidad;
+        insertToMap();
+    }
+
+    private void insertToMap(){
+        BDUtils db = new BDUtils("reportes.db");
+        Reporte reporte = (Reporte)db.getObject(this.fechaDeEventualidad.toString());
+        if(reporte == null)
+            reporte = new Reporte(this.fechaDeEventualidad, new ArrayList<Eventualidad>());
+        reporte.addEventualidad(this);
+        db.replaceObject(this.fechaDeEventualidad.toString(), reporte);
+        db.closeDB();
     }
 
     public String getEncargado() {

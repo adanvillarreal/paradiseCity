@@ -20,7 +20,7 @@ public class BDUtils {
         return map.containsKey(key)?map.get(key): null;
     }
     public void insertObject(String key, Object object){
-        if(map.containsKey(key)) {
+        if(!map.containsKey(key)) {
             map.put(key, object);
         }
     }
