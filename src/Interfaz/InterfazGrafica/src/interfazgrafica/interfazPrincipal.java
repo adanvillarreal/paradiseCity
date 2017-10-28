@@ -1,7 +1,14 @@
-package Interfaz;
+package interfazgrafica;
 
 import javax.swing.*;
 import java.awt.*;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 public class interfazPrincipal extends JFrame{
     private JPanel pnPanel0;
@@ -46,7 +53,7 @@ public class interfazPrincipal extends JFrame{
 
     public interfazPrincipal(){
         this.initialize();
-        this.setSize(600,400);
+        this.setSize(1200,800);
         this.pack();
         this.setVisible(true);
     }
