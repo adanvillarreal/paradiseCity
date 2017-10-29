@@ -18,17 +18,17 @@ public class Eventualidad {
     private String residente;
     @XStreamAlias("type")
     private Date fechaDeEventualidad;
-
+    public Eventualidad(){}
     public Eventualidad(String encargado, String descripcion, String residente, Date fechaDeEventualidad) {
         this.encargado = encargado;
         this.descripcion = descripcion;
         this.residente = residente;
         this.fechaDeEventualidad = fechaDeEventualidad;
-        insertToMap();
+        insertToMap("reportes.db");
     }
 
-    private void insertToMap(){
-        BDUtils db = new BDUtils("reportes.db");
+    public Reporte insertToMap(String file){
+        BDUtils db = new BDUtils(file);
         Reporte reporte;
         try {
             String xml = (String) db.getObject(this.fechaDeEventualidad.toString());
@@ -42,6 +42,7 @@ public class Eventualidad {
             db.insertObject(this.fechaDeEventualidad.toString(), EntidadSerializableUtils.getXml(reporte));
         db.replaceObject(this.fechaDeEventualidad.toString(), EntidadSerializableUtils.getXml(reporte));
         db.closeDB();
+        return reporte;
     }
 
     public String getEncargado() {
