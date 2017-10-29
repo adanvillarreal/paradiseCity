@@ -19,6 +19,7 @@ import static org.mockito.Mockito.when;
 
 class EventualidadTest {
     Eventualidad eventualidad = new Eventualidad();
+    Eventualidad eventualidad1 = new Eventualidad();
     @Mock
     BDUtils db;
     @BeforeEach
@@ -38,11 +39,26 @@ class EventualidadTest {
         }
     }
     @Test
-    public void insertToMapTest(){
+    public void insertToMapWithoutDataTest(){
        // when(db.getObject(anyString())).thenThrow(new NullPointerException());
         Reporte reporte = eventualidad.insertToMap("testReportes.db");
         assertEquals(reporte.getDate(), eventualidad.getFechaDeEventualidad());
         assertEquals(eventualidad, reporte.getEventualidads().get(0));
+    }
+    @Test
+    public void insertToMapWithDataTest(){
+        // when(db.getObject(anyString())).thenThrow(new NullPointerException());
+        eventualidad1.setFechaDeEventualidad(new Date(5,5,5));
+        eventualidad1.setResidente("Adan Villarreal");
+        eventualidad1.setDescripcion("Caida");
+        eventualidad1.setEncargado("Javier de la Garza");
+        Reporte reporte = eventualidad.insertToMap("testReportes.db");
+        assertEquals(reporte.getDate(), eventualidad.getFechaDeEventualidad());
+        Reporte reporte1 = eventualidad1.insertToMap("testReportes.db");
+       // System.out.println(reporte1.getEventualidads().get(0).getResidente());
+       // System.out.println(reporte1.getEventualidads().get(1).getResidente());
+        assertEquals(eventualidad.getResidente(), reporte1.getEventualidads().get(0).getResidente());
+        assertEquals(eventualidad1.getResidente(), reporte1.getEventualidads().get(1).getResidente());
     }
 
 
