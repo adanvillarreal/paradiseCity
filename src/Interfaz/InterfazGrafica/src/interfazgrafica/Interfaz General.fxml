@@ -101,7 +101,26 @@
                            <children>
                               <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <tabs>
-                                  <Tab text="Pendientes" />
+                                  <Tab text="Pendientes">
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Text layoutX="133.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="En uso:" wrappingWidth="95.6708984375">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                                <TableView layoutX="100.0" layoutY="98.0" prefHeight="200.0" prefWidth="526.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="80.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="302.0" text="Producto" />
+                                                      <TableColumn prefWidth="211.0" text="Días restantes" />
+                                                      <TableColumn prefWidth="186.0" text="Notificado" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button layoutX="563.0" layoutY="300.0" mnemonicParsing="false" text="Guardar" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content></Tab>
                                   <Tab text="Productos">
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -117,19 +136,38 @@
                                                    </columns>
                                                 </TableView>
                                                 <TextField layoutX="45.0" layoutY="257.0" prefHeight="31.0" prefWidth="148.0" />
-                                                <TextField layoutX="216.0" layoutY="257.0" prefHeight="31.0" prefWidth="261.0" />
-                                                <TextField layoutX="507.0" layoutY="257.0" prefHeight="31.0" prefWidth="129.0" />
-                                                <TextField layoutX="671.0" layoutY="257.0" prefHeight="31.0" prefWidth="227.0" />
+                                                <TextField layoutX="216.0" layoutY="257.0" prefHeight="31.0" prefWidth="262.0" />
+                                                <TextField layoutX="664.0" layoutY="257.0" prefHeight="31.0" prefWidth="239.0" />
                                                 <TextField layoutX="930.0" layoutY="257.0" prefHeight="31.0" prefWidth="105.0" />
                                                 <TextField layoutX="1059.0" layoutY="257.0" prefHeight="31.0" prefWidth="101.0" />
                                                 <Button layoutX="531.0" layoutY="314.0" mnemonicParsing="false" text="Agregar Producto" />
+                                                <TextField layoutX="502.0" layoutY="257.0" prefHeight="31.0" prefWidth="136.0" />
                                              </children>
                                           </AnchorPane>
                                        </content>
                                   </Tab>
                                     <Tab text="Medicinas">
                                        <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView prefHeight="200.0" prefWidth="526.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="38.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="177.0" text="Nombre" />
+                                                      <TableColumn minWidth="0.0" prefWidth="285.0" text="Descripción" />
+                                                      <TableColumn prefWidth="162.0" text="Dosis" />
+                                                      <TableColumn prefWidth="261.0" text="Precauciones" />
+                                                      <TableColumn prefWidth="132.0" text="Duración" />
+                                                      <TableColumn prefWidth="122.0" text="Restantes" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField layoutX="1062.0" layoutY="254.0" prefHeight="31.0" prefWidth="96.0" />
+                                                <TextField layoutX="926.0" layoutY="254.0" prefHeight="31.0" prefWidth="110.0" />
+                                                <TextField layoutX="665.0" layoutY="254.0" prefHeight="31.0" prefWidth="227.0" />
+                                                <TextField layoutX="211.0" layoutY="254.0" prefHeight="31.0" prefWidth="260.0" />
+                                                <TextField layoutX="39.0" layoutY="254.0" prefHeight="31.0" prefWidth="148.0" />
+                                                <TextField layoutX="497.0" layoutY="254.0" prefHeight="31.0" prefWidth="136.0" />
+                                                <Button layoutX="531.0" layoutY="313.0" mnemonicParsing="false" text="Agregar Medicina" />
+                                             </children></AnchorPane>
                                        </content>
                                     </Tab>
                                     <Tab text="Eventualidades">
@@ -165,7 +203,7 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Text layoutX="30.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha del reporte:" wrappingWidth="113.6708984375" />
-                        <TableView layoutX="30.0" layoutY="207.0" prefHeight="200.0" prefWidth="1141.0" AnchorPane.bottomAnchor="423.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                        <TableView layoutX="30.0" layoutY="203.0" prefHeight="200.0" prefWidth="1141.0" AnchorPane.bottomAnchor="358.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                            <columns>
                               <TableColumn editable="false" minWidth="0.0" prefWidth="168.0" text="Número de eventualidad" />
                               <TableColumn prefWidth="188.0" text="Residente" />
@@ -174,8 +212,8 @@
                               <TableColumn prefWidth="272.0" text="Atendido por" />
                            </columns>
                         </TableView>
-                        <Button layoutX="30.0" layoutY="102.0" mnemonicParsing="false" text="Día anterior" AnchorPane.leftAnchor="30.0" />
-                        <Button layoutX="1091.0" layoutY="102.0" mnemonicParsing="false" text="Día siguiente" AnchorPane.rightAnchor="30.0" />
+                        <Button layoutX="30.0" layoutY="150.0" mnemonicParsing="false" text="Día anterior" AnchorPane.leftAnchor="30.0" />
+                        <Button layoutX="1063.0" layoutY="150.0" mnemonicParsing="false" text="Día siguiente" AnchorPane.rightAnchor="30.0" />
                         <DatePicker layoutX="144.0" layoutY="55.0" />
                      </children></AnchorPane>
                </content>
@@ -184,13 +222,13 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="30.0" layoutY="100.0" mnemonicParsing="false" text="Alta masiva" AnchorPane.leftAnchor="30.0" />
-                        <GridPane layoutX="30.0" layoutY="210.0" prefHeight="276.0" prefWidth="670.0" AnchorPane.bottomAnchor="285.0" AnchorPane.leftAnchor="30.0">
+                        <Button layoutX="34.0" layoutY="90.0" mnemonicParsing="false" text="Alta masiva" AnchorPane.leftAnchor="34.0" />
+                        <GridPane layoutX="34.0" layoutY="210.0" prefHeight="398.0" prefWidth="875.0" AnchorPane.bottomAnchor="163.0" AnchorPane.leftAnchor="34.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="NEVER" maxWidth="141.0" minWidth="10.0" prefWidth="141.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="167.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="137.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="206.0" />
+                            <ColumnConstraints hgrow="NEVER" maxWidth="204.0" minWidth="10.0" prefWidth="204.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="272.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="181.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="195.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -199,23 +237,44 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" />
-                              <TextField GridPane.columnIndex="1" />
+                              <TextField GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="40.0" />
+                                 </GridPane.margin></TextField>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Identificación:" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="40.0" />
+                                 </GridPane.margin></TextField>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cuarto:" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="40.0" />
+                                 </GridPane.margin></TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="40.0" />
+                                 </GridPane.margin></TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets right="40.0" />
+                                 </GridPane.margin></TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets right="40.0" />
+                                 </GridPane.margin></TextField>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cama:" GridPane.rowIndex="4" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Servicio de emergencia:" GridPane.rowIndex="5" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de nacimiento:" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets right="40.0" />
+                                 </GridPane.margin></TextField>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seguro:" GridPane.rowIndex="6" />
                               <Button mnemonicParsing="false" text="Alta individual" GridPane.rowIndex="7">
                                  <GridPane.margin>
