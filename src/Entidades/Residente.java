@@ -4,7 +4,7 @@ import javafx.util.Pair;
 import java.util.*;
 import org.mapdb.DB;
 /* para incluir la libreria: https://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project */
-public class Residente {
+public class Residente {//Clase Residente
     private String nombre;
     private Date fechaDeNacimiento;
     private int numCuarto;
