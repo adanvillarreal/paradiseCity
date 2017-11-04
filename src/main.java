@@ -40,6 +40,11 @@ public class main {
     }
 
     public static void main(String[] args) throws IOException {
+
+        //Residente res = new Residente("Javier De la Garza", new Date(100,1,1), 2, 3, new Date(101,1,1), "666", "123", 1);
+
+
+
         /*
         BDUtils db = new BDUtils("residente.db");
         BDUtils db = new BDUtils("reportes.db");
@@ -59,22 +64,6 @@ public class main {
         eve = new Eventualidad("Adan", "a", "Residente5", new Date(8,5,5));
         eve = new Eventualidad("Adan", "a", "Residente6", new Date(8,5,5));
         eve = new Eventualidad("Adan", "a", "Residente7", new Date(8,5,5));
-        */
-
-
-        /*
-        Medicina med = new Producto
-
-        */
-        
-        // Reporte de turno
-        /*Date fecha1 = new Date(5,5,5);
-        reporteTurno(fecha1);
-        */
-
-        //Consulta por dias
-        /*int a = 5;
-        consultaDias(a);
         */
 
     }
