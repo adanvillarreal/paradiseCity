@@ -33,7 +33,8 @@ public class Residente{
     //TODO(@adanvillarreal): Investigar si es la manera adecuada de representar salidas
 
     public Residente(String nombre, Date fechaDeNacimiento, int numCuarto, int numCama, Date fechaDefuncion, String servicioEmergencia, String numSeguro, int status) throws IOException {
-        /*try {
+        /*
+        try {
             this.image = ImageIO.read(new File(nombre + ".jpg"));
         } catch(IOException e){
             this.image = ImageIO.read(new File("generic.jpg"));
