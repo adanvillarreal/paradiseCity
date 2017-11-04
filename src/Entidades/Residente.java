@@ -55,7 +55,7 @@ public class Residente{
             db.insertObject(this.nombre, EntidadSerializableUtils.getXml(this));
         }
         db.closeDB();
-    }    
+    }
 
     public int getStatus() {
         return status;
