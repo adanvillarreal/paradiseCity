@@ -1,15 +1,18 @@
 package Entidades;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import javafx.util.Pair;
 
 import java.util.Date;
-
+@XStreamAlias("message")
 public class Salida {
+    @XStreamAlias("type")
     private Pair<Date, Date> fechas;
+    @XStreamAlias("type")
     private String tipo;
 
     public Salida(Pair<Date, Date> fechas, String tipo) {
-        fechas = fechas;
+        this.fechas = fechas;
         this.tipo = tipo;
     }
 

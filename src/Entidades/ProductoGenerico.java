@@ -1,8 +1,14 @@
 package Entidades;
 
-public class ProductoGenerico {
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("message")
+public class ProductoGenerico{
+    @XStreamAlias("type")
     private String nombre;
+    @XStreamAlias("type")
     private String descripcion;
+    @XStreamAlias("type")
     private int cantidad;
 
     public ProductoGenerico(String nombre, String descripcion, int cantidad) {
