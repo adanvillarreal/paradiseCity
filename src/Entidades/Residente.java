@@ -51,8 +51,11 @@ public class Residente{
 
     public void insertToMap(String file){
         BDUtils db = new BDUtils(file);
-        
-    }
+        if(db.getObject(this.nombre) == null){
+            db.insertObject(this.nombre, EntidadSerializableUtils.getXml(this));
+        }
+        db.closeDB();
+    }    
 
     public int getStatus() {
         return status;
