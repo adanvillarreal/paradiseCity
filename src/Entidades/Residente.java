@@ -1,5 +1,6 @@
 package Entidades;
 import Utils.BDUtils;
+import Utils.EntidadSerializableUtils;
 import com.sun.istack.internal.Nullable;
 import javafx.util.Pair;
 import com.thoughtworks.xstream.*;
@@ -45,7 +46,16 @@ public class Residente{
         this.servicioEmergencia = servicioEmergencia;
         this.numSeguro = numSeguro;
         this.status = status;
+        insertToMap("residentes.db");
     }
+
+    public void insertToMap(String file){
+        BDUtils db = new BDUtils(file);
+        if(db.getObject(this.nombre) == null){
+            db.insertObject(this.nombre, EntidadSerializableUtils.getXml(this));
+        }
+        db.closeDB();
+    }    
 
     public int getStatus() {
         return status;
