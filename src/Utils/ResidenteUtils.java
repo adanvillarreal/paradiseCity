@@ -25,6 +25,10 @@ public class ResidenteUtils {
             modifyResidente(temp);
         }
     }
-
-
+    public static void modifyResidente( Residente res ){ //nombre es primary key
+        BDUtils db = new BDUtils("residentes.db");
+        db.replaceObject(res.getNombre(), EntidadSerializableUtils.getXml(res));
+        db.closeDB();
+    }
 }
+
