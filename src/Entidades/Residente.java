@@ -49,6 +49,7 @@ public class Residente{
         this.status = status;
         insertToMap("residentes.db");
     }
+    public Residente(){}
 
     public void insertToMap(String file){
         BDUtils db = new BDUtils(file);
